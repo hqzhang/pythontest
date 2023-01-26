@@ -13,19 +13,23 @@ steps:
   id: ReplyButtons-langcheck
   footer: ''
 """
-#with open("myfile.yml", "r") as myfile:
-#   mydic=yaml.safe_load(myfile)
-#    print(mydic)
-    
+
 myyaml = ruamel.yaml.YAML()
 yaml_str=Path('myfile.yml').read_text()
 data = myyaml.load(yaml_str)
-data['locations'][0]['ip Addr']='myip8.8.8.8999'
-#print('tag', data['steps'][1].tag.value)
+print(data)
+data['locations'][0]['ip Addr']='HQmyip8.8.8.8999'
+print('tag', data['locations'][0].tag.value)
+print(data['locations'][0])
+print(data['locations'][0]['Id'])
+mydt=data['locations']
+for i in range(2):
+  if mydt[i]['Id']=='i-b':
+    print(mydt[i]['ipAddr'])
+
 
 with open("structure.yml", "w") as file:
         # yaml.dump need a dict and a file handler as parameter
         myyaml = ruamel.yaml.YAML()
         myyaml.indent(sequence=4, offset=2)
         myyaml.dump(data, file)
-

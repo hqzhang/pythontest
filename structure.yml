@@ -1,0 +1,18 @@
+locations:
+  - !location
+    Id: i-a
+    environment: us-east
+    serverId: someServer
+    awsHostname: ip-someip
+    serverName: somewebsite.com
+    ipAddr: 192.168.0.1
+    roles: [webserver, php]
+    ip Addr: HQmyip8.8.8.8999
+  - !location
+    Id: i-b
+    environment: us-west
+    serverId: someServer1
+    awsHostname: ip-someip1
+    serverName: somewebsite1.com
+    ipAddr: 192.168.0.2
+    roles: [webserver, php]

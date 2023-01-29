@@ -15,8 +15,7 @@ steps:
 """
 
 myyaml = ruamel.yaml.YAML()
-yaml_str=Path('myfile.yml').read_text()
-data = myyaml.load(yaml_str)
+data = myyaml.load(Path('myfile.yml').read_text())
 print(data)
 data['locations'][0]['ip Addr']='HQmyip8.8.8.8999'
 print('tag', data['locations'][0].tag.value)

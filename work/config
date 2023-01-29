@@ -1,0 +1,13 @@
+components:
+  - !component
+    name: component1
+    argv: first9999
+    settings:
+        username: hongqi9999
+        password: nopass9999
+  - !component
+    name: component2
+    argv1: second888
+    settings:
+        use: emily8888
+        pass: zhang888

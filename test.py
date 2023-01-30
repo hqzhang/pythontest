@@ -13,7 +13,11 @@ for i in range(5):
     print(i)
 dicts={'color': 'blue', 'fruit': 'apple'}
 for k,v in dicts.items():
-    print(k+":"+v)
+    if not isinstance(v,dict):
+        print(k,":",v)
+    else:
+        for kk,vv in v.items():
+            print("  ",kk,":",vv)
 
 tmp="good"
 if tmp=="good":

@@ -1,13 +1,13 @@
 components:
   - !component
     name: component1
-    argv: first9999
+    dbargv: first9999
     settings:
-        username: hongqi9999
-        password: nopass9999
+        dbusername: hongqi9999
+        dbpassword: nopass9999
   - !component
     name: component2
-    argv1: second888
+    db.argv1: second888
     settings:
-        use: emily8888
-        pass: zhang888
+        db.user: emily8888
+        db.pass: zhang888

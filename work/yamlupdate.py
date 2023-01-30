@@ -32,16 +32,19 @@ def updateConfiguration(fileName,output):
             print('Seting in ',var['name'],'SETTING Just if Existing')
             for k,v in comp.items():
               if not isinstance(v,dict):
-                if k in var:
-                  print("set ",k, "as",v)
-                  var[k]=v
-                  print(var)
+                for x,y in var.items():
+                  if x in k:
+                    print("set ",k, "as",v)
+                    var[x]=v
               else: 
                  for kk,vv in v.items():
-                    if kk in var[k]:
-                      print("set ",kk, "as",vv)
-                      var[k][kk]=vv
-                      print(var)
+                    for x,y in var[k].items():
+                      print('kktest:',kk)
+                      print('xtest:',x)
+                      if x in kk:
+                           print("set ",kk, "as",vv)
+                           var[k][x]=vv
+                      print(var) 
 
     saveFile(output,data)
 
@@ -52,6 +55,20 @@ def saveFile(output,data):
         myyaml.indent(sequence=4, offset=2)
         myyaml.dump(data, file)
 
+def myprint(d):
+    for key, value in d.items():
+        yield key
+        if isinstance(value, dict):
+            yield from myprint(value)
+def repeat(k,v):
+      if not isinstance(v,dict):
+        print(k,v)
+      else:
+        for kk, vv in v.items():
+          print('second layer:')
 if __name__ == "__main__":
-   parseConfig('config')
-   updateConfiguration('configuration.yml','configuration_out.yml')
+    parseConfig('config')
+    updateConfiguration('configuration.yml','configuration_out.yml')
+    
+   
+

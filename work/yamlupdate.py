@@ -39,12 +39,9 @@ def updateConfiguration(fileName,output):
               else: 
                  for kk,vv in v.items():
                     for x,y in var[k].items():
-                      print('kktest:',kk)
-                      print('xtest:',x)
                       if x in kk:
                            print("set ",kk, "as",vv)
                            var[k][x]=vv
-                      print(var) 
 
     saveFile(output,data)
 

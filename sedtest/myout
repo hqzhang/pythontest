@@ -1,0 +1,7 @@
+#---------
+components:
+FOX: xyc
+  JUMP: xyz
+- OVER:
+  LAZY:
+  DOGS

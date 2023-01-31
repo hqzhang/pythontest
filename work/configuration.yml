@@ -3,11 +3,12 @@ components:
     name: component1
     argv: first
     settings:
-      usernam: hongqi
+      username: hongqi
       password: nopass
   - !component
     name: component2
-    argv1: second
+    argv1: first2
     settings:
-        user: emily
-        pass: zhang
+      username: hongqi2
+      password: nopass2
+  

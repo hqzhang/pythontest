@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-import yaml
+
 import ruamel.yaml
 from pathlib import Path
 import logging as log
@@ -63,6 +63,7 @@ def saveFile(output,data):
         myyaml = ruamel.yaml.YAML()
         myyaml.indent(sequence=4, offset=2)
         myyaml.dump(data, file)
+
 
 
 if __name__ == "__main__":

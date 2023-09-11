@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import yaml
-import ruamel.yaml
+import ruamel_yaml
 from pathlib import Path
 #conf = yaml.safe_load(Path('data.yml').read_text())
 yaml_str = """\

@@ -1,3 +1,4 @@
+x: y
 machines:
   - !machine
     Id: i-a

@@ -1,0 +1,5 @@
+components
+   - !components
+     name: ABC
+     settings:
+        XYZ: xyz

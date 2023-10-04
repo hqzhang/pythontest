@@ -9,9 +9,12 @@ yaml_str=Path('myfile.yml').read_text()
 data = myyaml.load(yaml_str)
 
 for idx, x in enumerate(data['machines']):
-    print(idx)
+    print(x)
+    if idx==1:
+        data['machines'].remove(x)
+        
 
-myyaml.dump(data)
+print(data)
 #with open("structure.yml", "w") as file:
  #       # yaml.dump need a dict and a file handler as parameter
  #       myyaml = ruamel.yaml.YAML()

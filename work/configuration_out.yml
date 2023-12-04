@@ -1,13 +1,9 @@
 components:
   - !component
     name: component1
-    argv: xyz
+    argv: XYZ
     settings:
-      username: hongqi9999
-      password: nopass
-  - !component
-    name: component2
-    argv1: first2
-    settings:
-      username: hongqi3333
-      password: pass333333
+      username: HONGQI
+      addresses:
+        pqs: PQS
+

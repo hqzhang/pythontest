@@ -13,7 +13,7 @@ for idx, x in enumerate(data['machines']):
     if idx==1:
         data['machines'].remove(x)
         
-
+˚
 print(data)
 #with open("structure.yml", "w") as file:
  #       # yaml.dump need a dict and a file handler as parameter

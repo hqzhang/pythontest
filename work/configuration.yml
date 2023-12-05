@@ -1,7 +1,23 @@
 components:
   - !component
     name: component1
-    argv: xyz
+    type: xyz
+    settings:
+        username: hongqi9999
+        addresses:
+           pqs: pqrs 
+
+  - !component
+    name: component2
+    type: pqr
+    settings:
+        username: hongqi9999
+        addresses:
+           pqs: pqrs 
+  
+  - !component
+    name: component3
+    type: xyz
     settings:
         username: hongqi9999
         addresses:

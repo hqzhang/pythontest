@@ -7,6 +7,7 @@ import logging as log
 params={}
 log.basicConfig(format='%(asctime)s:%(levelname)s:%(filename)s:\
   %(lineno)s:%(funcName)2s(): %(message)s', level=log.NOTSET)
+
 def parseConfig(fileName):
     log.info("Enter parseConfig() ")
     global params

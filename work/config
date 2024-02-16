@@ -1,9 +1,8 @@
 components:
   - name: component1
-    argv: XYZ
+    argv: XYZ99999
     settings:
-        username: HONGQI
+        username: HONGQI9999
         addresses:
-           pqs: PQS
-       
+           pqs: PQS9999
  

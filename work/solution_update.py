@@ -52,9 +52,10 @@ def updateConfiguration(fileName,output):
     for var in data['components']: 
        print(var)
         #when compoent name is matching
-       for comp in params['components']:
-          if comp['name'] == var['name']:
-             dictUpdate(var,comp)
+       for cfg in params['components']:
+          if cfg['name'] == var['name']:
+             print('COMPARE:',cfg['name'],var['name'])
+             var.update(cfg)
             
     saveFile(output,data)
 
@@ -70,8 +71,7 @@ def saveFile(output,data):
 if __name__ == "__main__":
     parseConfig('config')
     updateConfiguration('configuration.yml','configuration_out.yml')
-   
-   
+  
     # Use the update method to merge dict2 into dict1
    
    

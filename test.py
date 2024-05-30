@@ -28,10 +28,15 @@ ymltag="""
 components:
 -  !components
    name: hong
+   configurations:
+      Path: xyz
+      LaunchScript: prt
    executable: JAVA
+   java_settings:
+      jvm_cp: abc
    settings:
-        pages: 100
-        date: 2024-02
+      pages: 100
+      java_cp: 2024-02
   """
 data= ruamel.yaml.YAML().load(ymltag)
 cfg= ruamel.yaml.YAML().load(config)
@@ -46,7 +51,7 @@ for var in data['components']:
              var.update(cfg)
              
 print(data)
-exit()
+
 
 json={ 'name': 'hong','age': 18}
 list=[('name','hongqi'),('age',18)]

@@ -43,17 +43,24 @@ def updateConfiguration(input,config, output):
     print("param=",param['components'][0])
     for var in data['components']: # new data
        for kk, vv in var.items():
-          print('kk=',kk)
+          #print('kk=',kk)
 
           if kk not in param['components'][0]:
-             print('catch=', kk)
+             #print('catch=', kk)
              param['components'][0][kk]=vv
           for key,val in param['components'][0].items(): # template data
              if  key == kk and isinstance(val,dict):
                 for kkk, vvv in vv.items():
                      if kkk not in val:
                         print('catch=',kkk)
-                        param['components'][0][key][kkk]=vvv  
+                        param['components'][0][key][kkk]=vvv
+    for var in data['daemonalloc'].items(): # new data
+        print('var=====',var[0])
+        #for kv in param['daemonalloc'].items():
+        if var[0] not in param['daemonalloc']:
+           print('catch=', var[0])
+           param['daemonalloc'].append(var)
+
     saveFile(output,param)
 
 def saveFile(output,data):

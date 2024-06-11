@@ -1,3 +1,5 @@
+daemonalloc:
+  abc: xyz
 components:
   - name: component1
     type: XYZ99999

@@ -33,23 +33,28 @@ def dictUpdate(var,comp):
     print("END:",var)
     return var
 
-def updateConfiguration(fileName,output):
+def updateConfiguration(input,config, output):
     
-    log.info("Enter updateConfiguration() ")
-    global params
+    print("Enter updateConfiguration() ", input, config)
     myyaml = ruamel.yaml.YAML()
-    data = myyaml.load(Path(fileName).read_text())
-    #print(data)
-    for var in data['components']: 
-       print('comp==',var)
+    data = myyaml.load(Path(input).read_text())
+    print("data=",data['components'])
+    param = myyaml.load(Path(config).read_text())
+    print("param=",param['components'][0])
+    for var in data['components']: # new data
        for kk, vv in var.items():
-          for key,val in params['components'][0].items(): #for template
+          print('kk=',kk)
+
+          if kk not in param['components'][0]:
+             print('catch=', kk)
+             param['components'][0][kk]=vv
+          for key,val in param['components'][0].items(): # template data
              if  key == kk and isinstance(val,dict):
                 for kkk, vvv in vv.items():
                      if kkk not in val:
                         print('catch=',kkk)
-                        params['components'][0][key][kkk]=vvv  
-    saveFile(output,params)
+                        param['components'][0][key][kkk]=vvv  
+    saveFile(output,param)
 
 def saveFile(output,data):
   with open(output, "w") as file:
@@ -61,8 +66,8 @@ def saveFile(output,data):
 
 
 if __name__ == "__main__":
-    parseConfig('config')
-    updateConfiguration('configuration.yml','configuration_out.yml')
+    #parseConfig('config.yaml')
+    updateConfiguration('configuration.yaml', 'config.yaml','configuration_out.yml')
   
     # Use the update method to merge dict2 into dict1
    

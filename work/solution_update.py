@@ -59,7 +59,7 @@ def updateConfiguration(input,config, output):
         #for kv in param['daemonalloc'].items():
         if var[0] not in param['daemonalloc']:
            print('catch=', var[0])
-           param['daemonalloc'].append(var)
+           param['daemonalloc'][var[0]]=var[1]
 
     saveFile(output,param)
 

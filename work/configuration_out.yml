@@ -1,5 +1,6 @@
 daemonalloc:
   abc: xyz
+  def: pqr
 components:
   - name: component1
     type: XYZ99999

@@ -22,6 +22,10 @@ components:
    java_cp:
    type:
 """
+daemon="""
+
+"""
+
 cfg= ruamel.yaml.YAML().load(config)
 keys=list(cfg['components'].keys())
 print(keys)
@@ -39,3 +43,24 @@ for var in data['components']:
                  mydict[key]= v
    lss.append(mydict)              
 print(lss)
+
+class Employee(yaml.YAMLObject):
+    yaml_tag = u'!Employee'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+yaml_string = """
+employees:
+  - !Employee
+    name: John Doe
+    age: 30
+  - !Employee
+    name: Jane Smith
+    age: 25
+"""
+
+data = yaml.load(yaml_string, Loader=yaml.FullLoader)
+print(data)
+

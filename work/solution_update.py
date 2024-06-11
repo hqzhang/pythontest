@@ -14,14 +14,7 @@ def parseConfig(fileName):
     myyaml = ruamel.yaml.YAML()
     params = myyaml.load(Path(fileName).read_text())
     print(params)
-    for var in params['components']:
-        for k,v in var.items():
-          if not isinstance(v,dict):
-            print(k,v)
-          else:
-            for kk,vv in v.items():
-              print(kk,vv)
-
+    
 def dictUpdate(var,comp):
     print('Enter dictUpdate() config:',comp)
     for k,v in comp.items():
@@ -41,23 +34,22 @@ def dictUpdate(var,comp):
     return var
 
 def updateConfiguration(fileName,output):
+    
     log.info("Enter updateConfiguration() ")
+    global params
     myyaml = ruamel.yaml.YAML()
     data = myyaml.load(Path(fileName).read_text())
-    print(data)
-    log.info("Enter updateConfiguration() ")
-    myyaml = ruamel.yaml.YAML()
-    data = myyaml.load(Path(fileName).read_text())
-    print(data)
+    #print(data)
     for var in data['components']: 
-       print(var)
-        #when compoent name is matching
-       for cfg in params['components']:
-          if cfg['name'] == var['name']:
-             print('COMPARE:',cfg['name'],var['name'])
-             var.update(cfg)
-            
-    saveFile(output,data)
+       print('comp==',var)
+       for kk, vv in var.items():
+          for key,val in params['components'][0].items(): #for template
+             if  key == kk and isinstance(val,dict):
+                for kkk, vvv in vv.items():
+                     if kkk not in val:
+                        print('catch=',kkk)
+                        params['components'][0][key][kkk]=vvv  
+    saveFile(output,params)
 
 def saveFile(output,data):
   with open(output, "w") as file:

@@ -1,8 +1,7 @@
 components:
   - name: component1
-    argv: XYZ99999
+    type: XYZ99999
     settings:
         username: HONGQI9999
-        addresses:
-           pqs: PQS9999
+        country: canada
  

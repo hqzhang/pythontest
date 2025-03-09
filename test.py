@@ -63,13 +63,13 @@ myxml="""
 <body>Don't forget me this weekend!</body>
 </note>
 """
-mydict6=parseString(myxml) 
-print(mydict6)
+mydict1=parseString(myxml) 
+print(mydict1)
 mydict2=OrderedDict( yaml.safe_load(yml) )
 mydict3=OrderedDict(json)
 mydict4=OrderedDict(list)
 mydict5=OrderedDict(name='hong',age=18)
-for i in range (1,6):
+for i in range (1,5):
     print(eval("mydict" + str(i)))
 
 eval( """print("Hello")""")
@@ -96,5 +96,4 @@ with open("structure.yml", "w") as file:
 #   myyaml.dump(data, file)
 myvar=10
 print( eval("myvar") )
-if __name__ == "__main__":
-    myfunc()
+

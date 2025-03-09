@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 import sys
-
+import ruamel_yaml
 import ruamel.yaml
 from pathlib import Path
 import logging as log
 params={}
 log.basicConfig(format='%(asctime)s:%(levelname)s:%(filename)s:\
   %(lineno)s:%(funcName)2s(): %(message)s', level=log.NOTSET)
-
 def parseConfig(fileName):
     log.info("Enter parseConfig() ")
     global params
@@ -34,7 +33,6 @@ def dictUpdate(var,comp):
     return var
 
 def updateConfiguration(input,config, output):
-    
     print("Enter updateConfiguration() ", input, config)
     myyaml = ruamel.yaml.YAML()
     data = myyaml.load(Path(input).read_text())
